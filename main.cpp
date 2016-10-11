@@ -1,10 +1,5 @@
 #include <gmp.h>
-#include <string.h>
 #include <stdlib.h>
-
-#define MAX_NUMBERS 100
-
-#define DEBUG_
 
 void print_division(mpz_t idivisor, mpz_t idivident, unsigned long base, unsigned long d) {
     mpz_t factor;
@@ -65,16 +60,6 @@ void add_elem(ListElement *elem) {
 
 ListElement *next(ListElement *elem) {
     return elem->next;
-}
-
-void print_list() {
-    ListElement *next = first;
-
-    do
-    {
-        gmp_printf("%Zd\n", next->number);
-        next = next->next;
-    } while (next != first);
 }
 
 unsigned long get_period(ListElement *first)
